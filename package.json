@@ -1,0 +1,25 @@
+{
+  "name": "react-mp",
+  "version": "1.0.0",
+  "description": "React Study Project",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vldmr1/react-mp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vldmr1/react-mp/issues"
+  },
+  "homepage": "https://github.com/vldmr1/react-mp#readme"
+}
