@@ -3,7 +3,7 @@
 ### Tasks progress
 
 - [x] Core concepts
-- [ ] Webpack
+- [x] Webpack
 - [ ] Components
 - [ ] Testing
 - [ ] Flux + Redux

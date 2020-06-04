@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 window.onload = function() {
   class ReactComponent extends React.Component {
     constructor({text}) {
