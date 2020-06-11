@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const prodConfig = require('./configs/webpack.config.prod');
 const devConfig = require('./configs/webpack.config.dev');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { TsConfigPathsPlugin, CheckerPlugin } = require('awesome-typescript-loader');
 
 const configs = { production: prodConfig, development: devConfig };
 
@@ -17,9 +18,13 @@ const baseConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CheckerPlugin(),
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
+    plugins: [
+      new TsConfigPathsPlugin(),
+    ],
   },
   optimization: {
     splitChunks: {
@@ -52,8 +57,12 @@ const baseConfig = {
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader']
+        use: 'file-loader',
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        loader: 'file-loader',
+      }
     ]
   }
 }
