@@ -1,16 +1,30 @@
-import React from 'react';
-import Title from './Title';
+import React, { ReactElement } from 'react';
+import { MainWrapper } from 'components/Common';
+import { Footer } from 'components/Footer';
+import { MovieInfo } from 'entities';
+import { SearchPage /* MoviePage */ } from 'pages';
+import mockData from 'mocks/movies';
+
+interface State {
+  data: MovieInfo[];
+}
 
 class App extends React.PureComponent {
-	abc = 'abc';
+  state: State = {
+    data: mockData,
+  };
 
-	render(): JSX.Element {
-		return (
-			<div>
-				<Title data-testid="hello" className="hello">Hello World!</Title>
-			</div>
-		);
-	}
+  render(): ReactElement {
+    const { data } = this.state;
+    return (
+      <MainWrapper>
+        <SearchPage movieData={data} />
+        {/* TODO: implement router */}
+        {/* <MoviePage movieData=={this.state.data} /> */}
+        <Footer />
+      </MainWrapper>
+    );
+  }
 }
 
 export default App;

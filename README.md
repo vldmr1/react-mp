@@ -4,7 +4,7 @@
 
 - [x] Core concepts
 - [x] Webpack
-- [ ] Components
+- [x] Components
 - [ ] Testing
 - [ ] Flux + Redux
 - [ ] Routing

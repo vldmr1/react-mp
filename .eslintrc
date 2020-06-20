@@ -1,0 +1,50 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "react"
+  ],
+  "extends": [
+    "eslint-config-airbnb-typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "overrides": [
+    {
+        "files": ["*config*"],
+        "rules": {
+          "@typescript-eslint/no-var-requires": "off"
+        }
+    },
+    {
+      "files": ["*index*"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/state-in-constructor": "off"
+      }
+    }
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": "off"
+  },
+  "ignorePatterns": ["*.config.js", "server.js"]
+}
