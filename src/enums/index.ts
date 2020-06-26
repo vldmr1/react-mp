@@ -1,7 +1,3 @@
-// TOGGLE TITLES
-export const TOGGLE_TITLE_SORT_BY = 'sort by';
-export const TOGGLE_TITLE_SEARCH_BY = 'search by';
-
 export enum ToggleLabel {
   ReleaseDate = 'release date',
   Rating = 'rating',
@@ -12,4 +8,9 @@ export enum ToggleLabel {
 export enum ToggleTitle {
   SortBy = 'sort by',
   SearchBy = 'search by',
+}
+
+export enum ToggleName {
+  SortBy = 'sortBy',
+  SearchBy = 'searchBy',
 }

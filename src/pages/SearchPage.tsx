@@ -1,19 +1,24 @@
-import React, { FC, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { Header } from 'components/Header';
 import { MovieSearch } from 'components/MovieSearch';
 import { ControlBar } from 'components/ControlBar';
 import { MoviesList } from 'components/MoviesList';
-import { MovieInfo } from 'entities';
+import { MovieInfo, MovieSearchFormData } from 'entities';
 
 interface SearchPageProps {
   movieData: MovieInfo[];
+  sortBy: string;
+  searchFormHandler: (formData: MovieSearchFormData) => void;
+  sortChangeHandler: (sortBy: string) => void;
 }
 
-const SearchPage: FC<SearchPageProps> = ({ movieData }: SearchPageProps): ReactElement => (
+const SearchPage = ({
+  movieData, searchFormHandler, sortBy, sortChangeHandler,
+}: SearchPageProps): ReactElement => (
   <>
     <Header />
-    <MovieSearch />
-    <ControlBar />
+    <MovieSearch searchFormHandler={searchFormHandler} />
+    <ControlBar sortBy={sortBy} sortChangeHandler={sortChangeHandler} />
     <MoviesList movieData={movieData} />
   </>
 );

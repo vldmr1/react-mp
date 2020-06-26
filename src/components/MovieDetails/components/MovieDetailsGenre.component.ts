@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MovieDeatailsGenre = styled.p`
+const MovieDetailsGenre = styled.p`
   margin-bottom: 3rem;
   font-size: 1.6rem;
   line-height: 1.9rem;
@@ -8,4 +8,4 @@ const MovieDeatailsGenre = styled.p`
   opacity: 0.7;
 `;
 
-export default MovieDeatailsGenre;
+export default MovieDetailsGenre;

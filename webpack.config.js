@@ -35,7 +35,7 @@ const baseConfig = {
     rules: [
       {
         test: /\.ts(x?)$/,
-        exclude: [/node_modules/, /\.test.tsx?$/],
+        exclude: [/node_modules/, /\.spec.tsx?$/],
         use: [
           {
             loader: 'babel-loader',

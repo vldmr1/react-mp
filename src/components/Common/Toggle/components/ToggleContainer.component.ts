@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SwitchContainer = styled.form`
+const SwitchContainer = styled.div`
   display: flex;
   overflow: hidden;
 `;

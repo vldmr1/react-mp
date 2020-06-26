@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const SearchBar = styled.input`
+  margin-right: 1.5rem;
   height: 5.7rem;
   max-width: 71.3rem;
   padding: 2.9rem 1.6rem;

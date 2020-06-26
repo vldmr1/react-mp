@@ -8,6 +8,9 @@
       "jsx": true
     }
   },
+  "env": {
+    "cypress/globals": true
+  },
   "settings": {
     "react": {
       "version": "detect"
@@ -15,7 +18,8 @@
   },
   "plugins": [
     "@typescript-eslint/eslint-plugin",
-    "react"
+    "react",
+    "cypress"
   ],
   "extends": [
     "eslint-config-airbnb-typescript",
@@ -46,5 +50,5 @@
   "rules": {
     "import/no-extraneous-dependencies": "off"
   },
-  "ignorePatterns": ["*.config.js", "server.js"]
+  "ignorePatterns": ["*.config*", "server.js"]
 }
