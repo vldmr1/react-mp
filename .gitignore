@@ -1,3 +1,5 @@
 node_modules
 dist
 bundle-report
+test-coverage
+__snapshots__

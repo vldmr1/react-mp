@@ -1,4 +1,4 @@
-export { default as MovieDetailsGenre } from './MovieDeatilsGenre.component';
+export { default as MovieDetailsGenre } from './MovieDetailsGenre.component';
 export { default as MovieDetailsDescription } from './MovieDetailsDescription.component';
 export { default as MovieDetailsImage } from './MovieDetailsImage.component';
 export { default as MovieDetailsRating } from './MovieDetailsRating.component';

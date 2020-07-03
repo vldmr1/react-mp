@@ -5,7 +5,7 @@
 - [x] Core concepts
 - [x] Webpack
 - [x] Components
-- [ ] Testing
+- [x] Testing
 - [ ] Flux + Redux
 - [ ] Routing
 - [ ] Server-Side Rendering

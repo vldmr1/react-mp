@@ -9,6 +9,7 @@ const SwitchTitle = styled.div`
     font-weight: 100;
     vertical-align: middle;
     letter-spacing: 0.1rem;
+    text-transform: uppercase;
     opacity: 0.8;
 `;
 

@@ -12,3 +12,8 @@ export interface MovieInfo {
   genres: string[];
   runtime: null | number;
 }
+
+export interface MovieSearchFormData {
+  query: string;
+  searchBy: string;
+}

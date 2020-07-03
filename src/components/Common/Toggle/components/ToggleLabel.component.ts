@@ -10,6 +10,7 @@ const SwitchLabel = styled.label`
   font-weight: normal;
   text-align: center;
   text-shadow: none;
+  text-transform: uppercase;
   transition: all 0.1s ease-in-out;
 
   &:first-of-type {
