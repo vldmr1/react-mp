@@ -1,46 +1,30 @@
 import React, { ReactElement, PureComponent } from 'react';
 import { MainWrapper } from 'components/Common';
 import { Footer } from 'components/Footer';
-import { MovieInfo, MovieSearchFormData } from 'entities';
+import { RootState, AppComponent } from 'entities';
 import { SearchPage /* MoviePage */ } from 'pages';
-import mockData from 'mocks/movies';
-import { ToggleLabel } from 'enums';
+import { connect } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { Action } from 'redux';
+import { fetchMovies } from 'store/actions';
 
-interface AppComponentState {
-  data: MovieInfo[];
-  query: string;
-  sortBy: string;
-  searchBy: string;
-}
+const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, void, Action>) => ({
+  fetchMovieData: () => dispatch(fetchMovies()),
+});
 
-class App extends PureComponent {
-  state: AppComponentState = {
-    data: mockData,
-    query: '',
-    sortBy: ToggleLabel.ReleaseDate,
-    searchBy: ToggleLabel.Title,
-  };
+type AppProps = ReturnType<typeof mapDispatchToProps>;
 
-  handleSearchFormSubmit = (formData: MovieSearchFormData): void => {
-    const { query, searchBy } = formData;
-    this.setState((state) => ({ ...state, query, searchBy }));
-  };
-
-  handleSortChange = (sortBy: string): void => {
-    this.setState((state) => ({ ...state, sortBy }));
-  };
+class App extends PureComponent<AppProps, AppComponent> {
+  componentDidMount() {
+    const { fetchMovieData } = this.props;
+    fetchMovieData();
+  }
 
   render(): ReactElement {
-    const { data, sortBy } = this.state;
     return (
       <MainWrapper>
         {/* TODO: implement router */}
-        <SearchPage
-          sortBy={sortBy}
-          sortChangeHandler={this.handleSortChange}
-          searchFormHandler={this.handleSearchFormSubmit}
-          movieData={data}
-        />
+        <SearchPage />
         {/* <MoviePage movieData={data} /> */}
         <Footer />
       </MainWrapper>
@@ -48,4 +32,4 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);

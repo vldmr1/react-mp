@@ -9,7 +9,7 @@ describe('MovieSearch component', () => {
   const searchFormHandler = jest.fn();
 
   beforeAll(() => {
-    movieSearch = mountWithTheme(<MovieSearch searchFormHandler={searchFormHandler} />, theme);
+    movieSearch = mountWithTheme(<MovieSearch searchBy="title" searchFormHandler={searchFormHandler} />, theme);
   });
 
   it('should render correctly', () => {

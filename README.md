@@ -6,7 +6,7 @@
 - [x] Webpack
 - [x] Components
 - [x] Testing
-- [ ] Flux + Redux
+- [x] Flux + Redux
 - [ ] Routing
 - [ ] Server-Side Rendering
 - [ ] Useful libraries

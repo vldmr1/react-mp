@@ -14,3 +14,8 @@ export enum ToggleName {
   SortBy = 'sortBy',
   SearchBy = 'searchBy',
 }
+
+export enum SearchParamsMap {
+  'release date' = 'release_date',
+  'rating' = 'vote_average',
+}

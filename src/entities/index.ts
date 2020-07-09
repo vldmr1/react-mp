@@ -17,3 +17,24 @@ export interface MovieSearchFormData {
   query: string;
   searchBy: string;
 }
+
+export interface AppState {
+  sortBy: string;
+  searchBy: string;
+  searchQuery: string;
+}
+
+export interface DataState {
+  movies: MovieInfo[] | null;
+  isFetching: boolean;
+  error: string | null;
+}
+
+export interface RootState {
+  data: DataState;
+  app: AppState;
+}
+
+export interface AppComponent {
+  fetchMovieData: () => void;
+}
