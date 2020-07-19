@@ -5,14 +5,14 @@ import { GridContainer, ContentWrapper } from 'components/Common';
 import MoviesListWrapper from './components/MoviesListWrapper';
 
 interface MoviesListProps {
-  movieData: MovieInfo[];
+  movieData: MovieInfo[] | null;
 }
 
 const MoviesList: FC<MoviesListProps> = ({ movieData }: MoviesListProps): ReactElement => (
   <MoviesListWrapper>
     <ContentWrapper>
       <GridContainer columns="3" columnWidth="1fr" gridGap="4rem 3rem">
-        {movieData.map(({
+        {movieData && movieData.map(({
           id, poster_path, title, release_date, genres,
         }: MovieInfo) => (
           <MovieCard

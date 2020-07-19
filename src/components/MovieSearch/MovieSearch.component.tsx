@@ -9,11 +9,14 @@ import {
 } from './components';
 
 interface MovieSearchProps {
+  searchBy: string;
   searchFormHandler: (formData: MovieSearchFormData) => void;
 }
 
-const MovieSearch = ({ searchFormHandler }: MovieSearchProps): ReactElement => {
-  const [searchBy, setSearchBy] = useState<string>(ToggleLabel.Title);
+const MovieSearch = (
+  { searchFormHandler, searchBy: _searchBy }: MovieSearchProps,
+): ReactElement => {
+  const [searchBy, setSearchBy] = useState<string>(_searchBy);
   const searchInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
