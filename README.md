@@ -7,7 +7,7 @@
 - [x] Components
 - [x] Testing
 - [x] Flux + Redux
-- [ ] Routing
+- [x] Routing
 - [ ] Server-Side Rendering
 - [ ] Useful libraries
 - [ ] Authentication

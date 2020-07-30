@@ -7,6 +7,7 @@ const ControlBarMessage = styled.p`
   font-size: 1.6rem;
   line-height: 1.9rem;
   letter-spacing: 0;
+  opacity: 0.85
 `;
 
 export default ControlBarMessage;

@@ -6,15 +6,20 @@ import { ControlBarWrapper, ControlBarMessage } from './components';
 interface ControlBarProps {
   sortBy?: string;
   sortChangeHandler?: (sortBy: string) => void;
+  currentMovieGenre?: string;
 }
 
-const ControlBar = ({ sortBy, sortChangeHandler }: ControlBarProps): ReactElement => (
+const ControlBar = ({
+  sortBy, sortChangeHandler, currentMovieGenre,
+}: ControlBarProps): ReactElement => (
   <ControlBarWrapper>
     <ContentWrapper>
-      {/* TODO: change justification dynamically depending on the page */}
-      <FlexContainer justifyContent="flex-end">
-        {/* TODO: display ControlBarMessage depending on the route */}
-        <ControlBarMessage style={{ display: 'none' }}>Films by Drama genre</ControlBarMessage>
+      <FlexContainer justifyContent={currentMovieGenre ? 'flex-start' : 'flex-end'}>
+        {currentMovieGenre && (
+          <ControlBarMessage>
+            {`Films by ${currentMovieGenre} genre`}
+          </ControlBarMessage>
+        )}
         {sortBy && sortChangeHandler && (
           <Toggle
             inputName={ToggleName.SortBy}

@@ -15,6 +15,7 @@ const baseConfig = {
   entry: APP_DIR + '/index.tsx',
   output: {
     path: DIST_DIR,
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -52,6 +53,9 @@ const baseConfig = {
           },
           {
             loader: 'ts-loader',
+            options: {
+              configFile: 'configs/tsconfig.webpack.json',
+            }
           },
         ]
       },

@@ -1,1 +1,1 @@
-export { default as MoviesList } from './MoviesListWrapper';
+export { default as MoviesList } from './MoviesListWrapper.component';
