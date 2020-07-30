@@ -1,35 +1,24 @@
 import React, { ReactElement, PureComponent } from 'react';
 import { MainWrapper } from 'components/Common';
 import { Footer } from 'components/Footer';
-import { RootState, AppComponent } from 'entities';
-import { SearchPage /* MoviePage */ } from 'pages';
-import { connect } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
-import { Action } from 'redux';
-import { fetchMovies } from 'store/actions';
+import { SearchPage, MoviePage, NotFoundPage } from 'pages';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, void, Action>) => ({
-  fetchMovieData: () => dispatch(fetchMovies()),
-});
-
-type AppProps = ReturnType<typeof mapDispatchToProps>;
-
-class App extends PureComponent<AppProps, AppComponent> {
-  componentDidMount() {
-    const { fetchMovieData } = this.props;
-    fetchMovieData();
-  }
-
+class App extends PureComponent {
   render(): ReactElement {
     return (
-      <MainWrapper>
-        {/* TODO: implement router */}
-        <SearchPage />
-        {/* <MoviePage movieData={data} /> */}
-        <Footer />
-      </MainWrapper>
+      <Router>
+        <MainWrapper>
+          <Switch>
+            <Route path={['/', '/search', '/search:query']} component={SearchPage} exact />
+            <Route path="/movie/:id" component={MoviePage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+          <Footer />
+        </MainWrapper>
+      </Router>
     );
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default App;

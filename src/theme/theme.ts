@@ -9,6 +9,7 @@ const theme: DefaultTheme = {
     white: '#FFFFFF',
     green: '#A1E66F',
     black: '#000000',
+    overlayBlack: '#00000080',
   },
   fonts: {
     montserrat: 'Montserrat, Arial, sans-serif',

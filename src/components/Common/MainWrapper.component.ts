@@ -19,7 +19,7 @@ const MainWrapper = styled.div`
     top: 0;
     left: 0;
     background-image: url(${PosterCollage});
-    background-size: 230%;
+    background-size: 240%;
     background-repeat: no-repeat;
     z-index: -1;
     filter: blur(3px) brightness(0.4);

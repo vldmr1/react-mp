@@ -1,0 +1,12 @@
+{
+	"extends": "../tsconfig",
+	"compilerOptions": {
+		"sourceMap": true
+	},
+	"exclude": [
+    "../**/*.spec.ts",
+    "../**/*.spec.tsx",
+    "../**/__tests__/*",
+		"../node_modules"
+	]
+}

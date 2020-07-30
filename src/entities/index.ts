@@ -28,6 +28,7 @@ export interface DataState {
   movies: MovieInfo[] | null;
   isFetching: boolean;
   error: string | null;
+  currentMovie: MovieInfo | null,
 }
 
 export interface RootState {
@@ -35,6 +36,8 @@ export interface RootState {
   app: AppState;
 }
 
-export interface AppComponent {
-  fetchMovieData: () => void;
+export interface FetchParams {
+  searchQuery: string;
+  searchBy: string;
+  sortBy: string;
 }

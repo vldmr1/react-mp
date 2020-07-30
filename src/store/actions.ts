@@ -2,7 +2,7 @@ import axios from 'axios';
 import getMovieURL from 'utils';
 import { Dispatch } from 'react';
 import { Action } from 'redux';
-import { RootState } from 'entities';
+import { FetchParams } from 'entities';
 import { makeActionCreator } from './helpers';
 import actionTypes from './actionTypes';
 
@@ -15,10 +15,11 @@ export const updateSearchQuery = makeActionCreator(actionTypes.UPDATE_SEARCH_QUE
 export const fetchingData = makeActionCreator(actionTypes.FETCHING_DATA, 'isFetching');
 export const dataSuccess = makeActionCreator(actionTypes.FETCHING_DATA_SUCCESS, 'movies');
 export const dataError = makeActionCreator(actionTypes.FETCHING_DATA_ERROR, 'error');
+export const updateCurrentMovie = makeActionCreator(actionTypes.UPDATE_CURRENT_MOVIE, 'movieId');
 
-export const fetchMovies = () => (dispatch: Dispatch<Action>, getState: () => RootState): void => {
-  const { searchQuery, sortBy, searchBy } = getState().app;
-
+export const fetchMovies = ({ searchQuery, sortBy, searchBy }: FetchParams) => (
+  dispatch: Dispatch<Action>,
+): void => {
   dispatch(fetchingData(true));
   axios.get(getMovieURL({ searchQuery, sortBy, searchBy }))
     .then(({ data }): void => {

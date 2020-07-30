@@ -1,4 +1,4 @@
-import getMovieURL from 'utils';
+import getMovieURL from '../index';
 
 describe('Utils', () => {
   it('should return URL with specified query params', () => {

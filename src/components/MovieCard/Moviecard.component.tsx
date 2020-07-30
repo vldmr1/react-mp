@@ -1,9 +1,10 @@
-import React, { ReactElement, FC, useState } from 'react';
+import React, { ReactElement, FC } from 'react';
 import 'assets/img/img-placeholder-vertical.jpg';
-import { FlexContainer } from 'components/Common';
+import { FlexContainer, MoviePoster } from 'components/Common';
+import { Link } from 'react-router-dom';
 import {
   MovieCardWrapper,
-  MovieCardImage,
+  MovieCardPosterContainer,
   MovieCardCaptionWrapper,
   MovieCardTitle,
   MovieCardYear,
@@ -11,24 +12,32 @@ import {
 } from './components';
 
 interface MovieCardProps {
+  id: number;
   title: string;
   releaseDate: string;
   genres: string[];
   posterUrl: string;
+  handleMovieUpdate: (movieId: number) => void;
 }
 
 const MovieCard: FC<MovieCardProps> = (
   {
-    title, releaseDate, genres, posterUrl,
+    id, title, releaseDate, genres, posterUrl, handleMovieUpdate,
   }: MovieCardProps,
 ): ReactElement => {
-  const [imgUrl, setImgUrl] = useState(posterUrl);
+  // const [imgUrl, setImgUrl] = useState(posterUrl);
   const year = new Date(releaseDate).getFullYear();
   const displayedGenres = genres.slice(0, 2).join(', ');
 
   return (
     <MovieCardWrapper>
-      <MovieCardImage src={imgUrl} onError={() => setImgUrl('src/assets/img/img-placeholder-vertical.jpg')} />
+      <Link to={`/movie/${title}`}>
+        <MovieCardPosterContainer
+          onClick={() => handleMovieUpdate(id)}
+        >
+          <MoviePoster posterUrl={posterUrl} />
+        </MovieCardPosterContainer>
+      </Link>
       <FlexContainer justifyContent="space-between">
         <MovieCardCaptionWrapper>
           <MovieCardTitle>{title}</MovieCardTitle>

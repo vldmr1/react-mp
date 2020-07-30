@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
-import { ContentWrapper, FlexContainer } from 'components/Common';
+import { ContentWrapper, FlexContainer, MoviePoster } from 'components/Common';
 import { MovieInfo } from 'entities';
 import {
   MovieDetailsWrapper,
-  MovieDetailsImage,
+  MovieDetailsPosterContainer,
   MovieDetailsTitle,
   MovieDetailsRating,
   MovieDetailsGenre,
@@ -35,9 +35,11 @@ const MovieDetails = ({
     <MovieDetailsWrapper>
       <ContentWrapper>
         <FlexContainer justifyContent="space-between">
-          <MovieDetailsImage src={poster_path} />
+          <MovieDetailsPosterContainer>
+            <MoviePoster posterUrl={poster_path} />
+          </MovieDetailsPosterContainer>
           <MovieDetailsDescriptionWrapper>
-            <FlexContainer width="35rem" justifyContent="space-between">
+            <FlexContainer justifyContent="space-between">
               <MovieDetailsTitle>{title}</MovieDetailsTitle>
               <MovieDetailsRating>{vote_average}</MovieDetailsRating>
             </FlexContainer>
